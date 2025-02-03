@@ -31,6 +31,9 @@ pip install -r requirements.txt
 ```
 python3 manage.py runserver
 ```
+4. Теперь к приложению можно обращаться через http://localhost:8000/
+
+4. В браузере по адресу http://localhost:8000/swagger/ можно ознакомиться с описанием API.
 
 Для запуска с использованием контейнеризации:
 1. Убедитесь, что Docker установлен на ваш компьютер, или установите из дистрибутива, полученного на сайте https://www.docker.com/.
@@ -52,9 +55,9 @@ docker-compose up -d --build
  ✔ Container course_project_5-celery-beat-1  Recreated                                                                                                                                         0.8s 
  ✔ Container course_project_5-nginx-1        Recreated                                                                                                                                         0.8s 
  ✔ Container course_project_5-web-1          Recreated   
-Теперь к приложению можно обращаться через http://localhost:8000/
+Теперь к приложению можно обращаться через http://публичный_адрес_сервера/
 
-4. В браузере по адресу http://localhost:8000/swagger/ можно ознакомиться с описанием API.
+4. В браузере по адресу http://публичный_адрес_сервера/swagger/ можно ознакомиться с описанием API.
 5. Последующие запуски можно осуществлять командой:
 ```
 docker-compose up
