@@ -20,7 +20,7 @@
 ## Установка:
 1. Клонируйте репозиторий:
 ```
-https://github.com/ArtemMTim/Course_Project_5
+https://github.com/ArtemMTim/Habbit_tracker
 ```
 2. Установите зависимости:
 ```
