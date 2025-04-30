@@ -14,9 +14,10 @@
 Разработаны тесты CRUD операций модели привычек и модели пользователя.
 Переменные "спрятаны" в переменное окружение.
 Реализована периодическая функция проверки необходимости выполнения привычки с отправкой напоминания через телеграмм-бот.
-
+Реализована упаковка приложений в контейнеры с использованием docker и docker-compose.
 
 ## Установка:
+Для запуска без использования контейнеризации:
 1. Клонируйте репозиторий:
 ```
 https://github.com/ArtemMTim/Habbit_tracker
@@ -25,6 +26,46 @@ https://github.com/ArtemMTim/Habbit_tracker
 ```
 pip install -r requirements.txt
 ```
+3. Запустите команду: 
+```
+python3 manage.py runserver
+```
+4. Теперь к приложению можно обращаться через http://localhost:8000/
+
+4. В браузере по адресу http://localhost:8000/swagger/ можно ознакомиться с описанием API.
+
+Для запуска с использованием контейнеризации:
+1. Убедитесь, что Docker установлен на ваш компьютер, или установите из дистрибутива, полученного на сайте https://www.docker.com/.
+
+2. Для запуска процесса первичного создания контейнеров в терминале перейдите в корневую папку проекта и выполните команду: 
+```
+docker-compose up -d --build
+```
+
+3. После завершения процесса развертывания и запуска приложений в контейнерах docker в терминале появится сообщение:
+[+] Running 10/10attestation manifest sha256:934c8696378d832a487b71d352249a34c965b929d44c4eaf0cf5494076d8e1a3                                                                                  0.0s
+ ✔ Service web                               Built                                                                                                                                             9.0s 
+ ✔ Service celery-beat                       Built                                                                                                                                             2.2s 
+ ✔ Service celery                            Built                                                                                                                                             1.7s 
+ ✔ Service nginx                             Built                                                                                                                                             1.5s 
+ ✔ Container course_project_5-redis-1        Created                                                                                                                                           0.0s 
+ ✔ Container course_project_5-db-1           Created                                                                                                                                           0.0s 
+ ✔ Container course_project_5-celery-1       Recreated                                                                                                                                         0.3s 
+ ✔ Container course_project_5-celery-beat-1  Recreated                                                                                                                                         0.8s 
+ ✔ Container course_project_5-nginx-1        Recreated                                                                                                                                         0.8s 
+ ✔ Container course_project_5-web-1          Recreated   
+Теперь к приложению можно обращаться через http://публичный_адрес_сервера/
+
+4. В браузере по адресу http://публичный_адрес_сервера/swagger/ можно ознакомиться с описанием API.
+5. Последующие запуски можно осуществлять командой:
+```
+docker-compose up
+```
+6. Остановить работу контейнеров можно командой:
+```
+docker-compose up
+```
+
 ## Использование:
 Раздел будет дополняться по мере разработки.
 
